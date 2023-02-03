@@ -1,0 +1,14 @@
+{% import '_includes/forms.twig' as forms %}
+
+{{ forms.textField({
+  first: true,
+  label: 'Api key',
+  name: 'apiKey',
+  value: settings.apiKey
+}) }}
+
+{{ forms.textField({
+  label: 'Audience id',
+  name: 'listId',
+  value: settings.listId
+}) }}

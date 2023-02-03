@@ -1,0 +1,29 @@
+{
+    "name": "datastone/craft-mailchimp-sync",
+    "description": "Datastone mailchimp sync",
+    "version": "dev-develop",
+    "type": "craft-plugin",
+    "keywords": ["email", "mailchimp", "newsletter"],
+    "license": "MIT",
+    "authors": [
+      {
+        "name": "Datastone",
+        "homepage": "https://datastone.nl"
+      }
+    ],
+    "support": {
+      "email": "info@datastone.nl"
+    },
+    "require": {
+      "craftcms/cms": "^4.2.5"
+    },
+    "autoload": {
+      "psr-4": {
+        "datastone\\mailchimpSync\\": "src/"
+      }
+    },
+    "extra": {
+      "name": "Datastone mailchimp sync",
+      "handle": "datastone-mailchimp-sync"
+    }
+  }
