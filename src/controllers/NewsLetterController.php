@@ -23,11 +23,11 @@ class NewsLetterController extends Controller
         $response = Plugin::getInstance()->mailchimp->registerMember($email);
 
         if ($response->getStatusCode() !== 200) {
-            $this->setSuccessFlash('Aanmelden op de nieuwsbrief is niet gelukt of je bent al geregistreerd.');
+            $this->setSuccessFlash(\Craft::t('datastone-mailchimp-sync', 'subscription-error'));
             return $this->redirect(\Craft::$app->getRequest()->referrer);
         }
 
-        $this->setSuccessFlash('Succesvol aangemeld op de nieuwsbrief!');
+        $this->setSuccessFlash(\Craft::t('datastone-mailchimp-sync', 'subscription-success'));
         return $this->redirect(\Craft::$app->getRequest()->referrer);
     }
 }

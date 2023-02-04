@@ -26,6 +26,7 @@ class Plugin extends \craft\base\Plugin
                 if ($event->sender->firstSave) {
                     if(\Craft::$app->getRequest()->getParam('register-newsletter') === 'checked') {
                         $response = self::getInstance()->mailchimp->registerMember($event->sender->email);
+                        // TODO: add error handling
                     }                     
                 }
             }
