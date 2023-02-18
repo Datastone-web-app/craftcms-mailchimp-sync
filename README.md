@@ -1,7 +1,7 @@
 # Mailchimp sync
 This is a simple craftcms plugin to have a newsletter subscribe form and registers new members to mailchimp.
 
-## Instalation
+## Installation
 ````
 composer require datastone/craft-mailchimp-sync
 ````
