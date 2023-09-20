@@ -11,7 +11,7 @@ class NewsLetterController extends Controller
     protected array|bool|int $allowAnonymous = true;
 
     // {{ actionInput('datastone-mailchimp-sync/news-letter/subscribe') }} or {{site_url}}/actions/datastone-mailchimp-sync/news-letter/subscribe
-    public function actionSubscribe(): Response
+    public function actionSubscribe(): ?Response
     {
         $this->requirePostRequest();
         $this->requireSiteRequest();
@@ -23,11 +23,9 @@ class NewsLetterController extends Controller
         $response = Plugin::getInstance()->mailchimp->registerMember($email);
 
         if ($response->getStatusCode() !== 200) {
-            $this->setSuccessFlash(\Craft::t('datastone-mailchimp-sync', 'subscription-error'));
-            return $this->redirect(\Craft::$app->getRequest()->referrer);
+            return $this->asFailure(\Craft::t('datastone-mailchimp-sync', 'subscription-error'));
         }
 
-        $this->setSuccessFlash(\Craft::t('datastone-mailchimp-sync', 'subscription-success'));
-        return $this->redirect(\Craft::$app->getRequest()->referrer);
+        return $this->asSuccess(\Craft::t('datastone-mailchimp-sync', 'subscription-success'));
     }
 }

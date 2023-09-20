@@ -6,6 +6,7 @@ use yii\base\Event;
 use craft\base\Model;
 use craft\elements\User;
 use craft\events\ModelEvent;
+use datastone\mailchimpSync\models\Settings;
 
 class Plugin extends \craft\base\Plugin
 {
@@ -35,7 +36,7 @@ class Plugin extends \craft\base\Plugin
 
     protected function createSettingsModel(): ?Model
     {
-        return new \datastone\mailchimpSync\models\Settings();
+        return new Settings();
     }
 
     protected function settingsHtml(): ?string
