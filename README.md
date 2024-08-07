@@ -15,8 +15,8 @@ The Craft CMS Mailchimp Sync plugin allows you to send email addresses collected
 2. Configure the plugin by going to "Settings → Plugins → Datastone mailchimp sync" in the Craft CMS control panel.
 
    - Configuring the Mailchimp API Key:
-Before you can use the plugin, you need to configure your Mailchimp API Key:
-https://mailchimp.com/developer/marketing/guides/quick-start/
+     Before you can use the plugin, you need to configure your Mailchimp API Key:
+     https://mailchimp.com/developer/marketing/guides/quick-start/
 
      make sure the api key ends with the mailchimp server eg: us3
      Enter your Mailchimp API Key in the provided field and save your settings.
@@ -35,6 +35,9 @@ https://mailchimp.com/developer/marketing/guides/quick-start/
     <button type="submit">Subscribe</button>
 </form>
 ````
+
+For Craft Commerce you can also add a register-newsletter checkbox on the users/save-user form with the value 'checked'
+To send the email to Mailchimp on user registration via the queue.
 
 ## Translations
 
@@ -65,7 +68,7 @@ Only the email will be sent to Mailchimp. Ensure that you have no other required
 
 - Posibility to add more fields to the form like first and lastname
 
-- serperate server id, for custom api keys
+- seperate server id, for custom api keys
 
 - unsubscribe functions
 
